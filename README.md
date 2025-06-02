@@ -1,12 +1,12 @@
-# Julius: Seu Coach Financeiro Linha Dura
+# Julião: Seu Coach Financeiro Linha Dura
 
 **Status do Projeto:** Em Desenvolvimento (Fase de Planejamento do MVP Concluída, Início do Desenvolvimento)
 
 ## Descrição Curta
 
-Julius é um aplicativo de gestão financeira pessoal projetado para ajudar os usuários a tomarem controle de suas finanças com uma abordagem direta, bem-humorada e um toque de "linha dura". A interação principal para registro de transações e consultas rápidas ocorre via WhatsApp, onde a Inteligência Artificial "Julius" atua como um coach financeiro com uma personalidade única. Um dashboard web moderno complementa a experiência, oferecendo visualizações detalhadas, relatórios e configurações.
+Julião é um aplicativo de gestão financeira pessoal projetado para ajudar os usuários a tomarem controle de suas finanças com uma abordagem direta, bem-humorada e um toque de "linha dura". A interação principal para registro de transações e consultas rápidas ocorre via WhatsApp, onde a Inteligência Artificial "Julião" atua como um coach financeiro com uma personalidade única. Um dashboard web moderno complementa a experiência, oferecendo visualizações detalhadas, relatórios e configurações.
 
-## A Persona "Julius"
+## A Persona "Julião"
 
 Inspirado no icônico personagem Julius Rock da série "Todo Mundo Odeia o Chris", o assistente de IA do aplicativo é:
 
@@ -18,7 +18,7 @@ Inspirado no icônico personagem Julius Rock da série "Todo Mundo Odeia o Chris
 
 ## Funcionalidades Principais do MVP
 
-* **Interação via WhatsApp com a IA Julius:**
+* **Interação via WhatsApp com a IA Julião:**
     * Registro de despesas (avulsas e parceladas) e receitas usando linguagem natural.
     * Gestão de múltiplas contas bancárias/carteiras.
     * Gestão de múltiplos cartões de crédito (acompanhamento de faturas, registro de pagamentos).
@@ -27,7 +27,7 @@ Inspirado no icônico personagem Julius Rock da série "Todo Mundo Odeia o Chris
     * Transferências entre contas.
     * Consultas de saldo, extrato de faturas, próximas parcelas/recorrências.
     * Lembretes de vencimentos de faturas e contas recorrentes.
-    * Respostas e dicas com a personalidade única do Julius.
+    * Respostas e dicas com a personalidade única do Julião.
 * **Dashboard Web Moderno:**
     * Configuração inicial de contas, cartões de crédito e transações recorrentes.
     * Visão geral consolidada dos saldos, próximas faturas e resumos mensais.
