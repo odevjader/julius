@@ -268,23 +268,14 @@ This document outlines the development progress and future plans for the Julião
     -   Configured Docker (`Dockerfile`, `docker-compose.yml`) for development and production environments.
     -   Created `.env.example` for environment configuration.
     -   Resolved Docker execution issues ensuring `uvicorn` runs correctly within Poetry's environment.
+-   [X] **Core Data Models Definition (SQLModel)** - All core entities (UserProfile, Account, Transaction, Category, CreditCard, Installment, RecurringTransaction) and their relationships defined using SQLModel in `juliao_api/app/models/`.
+-   [X] **Database Setup and Migrations (Alembic & SQLModel)** - Initial database schema created and versioned using Alembic. Alembic is configured to manage migrations based on SQLModel definitions.
 
 ### Upcoming
 -   [ ] **User Authentication & Authorization**
     -   Implement JWT-based authentication (potentially leveraging Supabase).
     -   Define user registration and login endpoints.
     -   Set up password hashing and recovery mechanisms.
--   [ ] **Core Data Models Definition**
-    -   Define Pydantic models and SQLAlchemy/SQLModel schemas for:
-        -   Users
-        -   Accounts (e.g., checking, savings, credit cards)
-        -   Transactions (income, expenses, transfers)
-        -   Categories
-        -   Budgets
--   [ ] **Database Setup and Migrations**
-    -   Finalize database schema.
-    -   Configure and initialize Alembic for database migrations.
-    -   Create initial migration scripts.
 -   [ ] **Basic CRUD Operations for Core Models**
     -   Develop API endpoints for creating, reading, updating, and deleting core data entities (e.g., accounts, transactions).
 -   [ ] **Supabase Integration (Initial)**

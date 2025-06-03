@@ -82,3 +82,42 @@ The `juliao_api/` directory follows a standard structure for FastAPI application
 -   `pyproject.toml` & `poetry.lock`: Dependency management with Poetry.
 -   `.env.example`: Example environment variables.
 -   `alembic.ini`: Alembic configuration for database migrations.
+
+### Database Migrations (Alembic)
+
+Database schema changes are managed using Alembic. The migration scripts are located in the `juliao_api/alembic/versions/` directory. Ensure your Docker development database container is running before executing Alembic commands.
+
+**Key Alembic commands (run from within the `juliao_api/` directory):**
+
+*   **Ensure the database container is running:**
+    ```bash
+    docker-compose up -d db
+    ```
+    (If you're running the full API service with `docker-compose up -d`, the `db` service will already be up.)
+
+*   **Apply all pending migrations:**
+    This command will upgrade your database schema to the latest version.
+    ```bash
+    poetry run alembic upgrade head
+    ```
+
+*   **Generate a new migration script:**
+    After making changes to your SQLModel definitions in `juliao_api/app/models/`, you'll need to generate a new migration script.
+    ```bash
+    poetry run alembic revision -m "your_descriptive_migration_message"
+    ```
+    Inspect the generated script in `juliao_api/alembic/versions/` and populate the `upgrade()` and `downgrade()` functions as needed.
+
+*   **Check current database revision:**
+    ```bash
+    poetry run alembic current
+    ```
+
+*   **Show migration history:**
+    ```bash
+    poetry run alembic history
+    ```
+
+**Important:**
+- Alembic uses the `DATABASE_URL_LOCAL` from your `.env.dev` file (within `juliao_api/`) to connect to the database. Ensure this is correctly configured.
+- The initial database schema based on the defined SQLModels has been created and versioned.
