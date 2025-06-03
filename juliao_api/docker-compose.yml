@@ -11,7 +11,7 @@ services:
       - "8001:8000" # Map host port 8001 to container port 8000
     env_file:
       - .env.dev # Load environment variables from .env.dev
-    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    command: poetry run uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
     depends_on:
       - db
 
