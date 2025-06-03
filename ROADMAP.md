@@ -253,3 +253,74 @@
     * Planejamento de novas funcionalidades.
 
 ---
+
+## Project Roadmap: Julião (High-Level Overview)
+
+This document outlines the development progress and future plans for the Julião personal finance application.
+
+## Phase 1: Foundation and Core Setup
+
+### Completed
+-   [X] **Initial Backend Project Setup (FastAPI, Docker, Poetry)**
+    -   Established project structure for `juliao_api`.
+    -   Integrated FastAPI with a basic health check endpoint.
+    -   Set up Poetry for dependency management.
+    -   Configured Docker (`Dockerfile`, `docker-compose.yml`) for development and production environments.
+    -   Created `.env.example` for environment configuration.
+
+### Upcoming
+-   [ ] **User Authentication & Authorization**
+    -   Implement JWT-based authentication (potentially leveraging Supabase).
+    -   Define user registration and login endpoints.
+    -   Set up password hashing and recovery mechanisms.
+-   [ ] **Core Data Models Definition**
+    -   Define Pydantic models and SQLAlchemy/SQLModel schemas for:
+        -   Users
+        -   Accounts (e.g., checking, savings, credit cards)
+        -   Transactions (income, expenses, transfers)
+        -   Categories
+        -   Budgets
+-   [ ] **Database Setup and Migrations**
+    -   Finalize database schema.
+    -   Configure and initialize Alembic for database migrations.
+    -   Create initial migration scripts.
+-   [ ] **Basic CRUD Operations for Core Models**
+    -   Develop API endpoints for creating, reading, updating, and deleting core data entities (e.g., accounts, transactions).
+-   [ ] **Supabase Integration (Initial)**
+    -   Connect to Supabase for database and potentially authentication.
+    -   Explore Supabase for storage if needed.
+
+## Phase 2: Feature Development
+
+### Planned
+-   [ ] Transaction Management Enhancements
+-   [ ] Budgeting Features
+-   [ ] Financial Goals Setting
+-   [ ] Reporting and Analytics
+-   [ ] Credit Card Management
+-   [ ] Investment Tracking (Basic)
+-   [ ] Notifications System
+
+## Phase 3: Refinements and Advanced Features
+
+### Planned
+-   [ ] AI-powered Financial Insights (Gemini API integration)
+-   [ ] Advanced Reporting and Data Visualization
+-   [ ] Debt Management Tools
+-   [ ] Multi-currency Support
+-   [ ] Third-party Account Aggregation (if feasible)
+
+## Technology Stack (Backend - Julião API)
+
+-   **Framework:** FastAPI
+-   **Language:** Python 3.9+
+-   **Database:** PostgreSQL
+-   **Containerization:** Docker
+-   **Dependency Management:** Poetry
+-   **Migrations:** Alembic
+-   **Authentication:** JWT (potentially via Supabase Auth)
+-   **Cloud Services (Potential):** Supabase (Database, Auth, Storage), Gemini API
+
+---
+
+*This roadmap is a living document and will be updated as the project progresses.*
