@@ -1,0 +1,168 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.[oa] # C/C++ object files
+*.so # C/C++ shared libraries/PYTHONPATH
+*.pyd # C/C++ python dlls
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+# Usually these files are written by a python script from a template
+# before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff (Not using, but good general Python)
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff (Not using, but good general Python)
+instance/
+.webassets-cache
+
+# Scrapy stuff (Not using)
+.scrapy
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Poetry
+# poetry.lock should be committed, but .pids and other poetry state files should not
+.poetry/
+poetry.toml
+
+# Supabase
+# The `supabase init` command creates a .gitignore inside the supabase/ directory
+# that handles most supabase-specific ignores (like .temp/, .branches/, etc.).
+# This root .gitignore will ignore the entire supabase/functions/ (compiled functions) if you choose to build them locally
+# before deploying, but the source of the functions (e.g. TypeScript/JavaScript) inside supabase/functions/
+# should be committed.
+# If Supabase CLI or other tools generate local-only state files at the root, add them here.
+# supabase/.temp/ # Usually handled by supabase/.gitignore
+# supabase/.branches/ # Usually handled by supabase/.gitignore
+# supabase/.vscode/ # Usually handled by supabase/.gitignore
+# supabase/db/dumps/ # Local db dumps if any, usually handled by supabase/.gitignore
+
+# Node.js / React (Vite)
+node_modules/
+.npm
+npm-debug.log*
+yarn-error.log*
+yarn-debug.log*
+build/ # Common for React apps, Vite uses 'dist'
+dist/  # Vite's default build output directory
+.parcel-cache/ # If Parcel is ever used
+.DS_Store
+.env.local
+.env.*.local
+.env.development.local
+.env.test.local
+.env.production.local
+coverage/ # JS test coverage
+
+# VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json 
+# Un-ignore specific VSCode config files if you want to share them with the team (or Jules)
+# For a solo project or if Jules doesn't use them, ignoring the whole .vscode/ folder is simpler.
+# Let's start by ignoring most of it, can be adjusted.
+
+# Operating System Files
+.DS_Store
+._*
+Thumbs.db
+desktop.ini
+*~ # Editor backup files
+
+# Log files
+*.log
+logs/
+
+# IDE / Editor specific
+.idea/ # IntelliJ
+*.iml # IntelliJ
+*.project # Eclipse
+.project # Eclipse
+.classpath # Eclipse
+*.sublime-workspace
+*.sublime-project
+
+# Docker
+# If you have local Docker build artifacts you don't want to commit (rarely needed at root if .dockerignore is used)
+# docker-compose.override.yml # If you use it for local-only overrides
+
+# WAHA (WhatsApp HTTP API) - if it generates local state/log files outside its Docker volume
+waha_data/ # Example, adjust if WAHA creates local data folders
+
+# Outras configurações locais ou segredos
+credentials.json
+secrets.yaml
+*.pem
+*.key
+
+# Arquivos de build específicos do frontend (se 'dist' não for suficiente)
+.vite/
+.nuxt/ # If Nuxt.js is ever used
+.svelte-kit/ # If SvelteKit is ever used
+
+# Testes de Frontend (se gerarem arquivos específicos)
+/cypress/videos/
+/cypress/screenshots/
