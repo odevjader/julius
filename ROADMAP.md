@@ -267,6 +267,7 @@ This document outlines the development progress and future plans for the Julião
     -   Set up Poetry for dependency management.
     -   Configured Docker (`Dockerfile`, `docker-compose.yml`) for development and production environments.
     -   Created `.env.example` for environment configuration.
+    -   Resolved Docker execution issues ensuring `uvicorn` runs correctly within Poetry's environment.
 
 ### Upcoming
 -   [ ] **User Authentication & Authorization**
