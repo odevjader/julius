@@ -1,0 +1,108 @@
+/* General Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5; /* Light grey background */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    background-color: #2c3e50; /* Dark blue-grey */
+    color: #ecf0f1; /* Light grey/white text */
+    padding: 1.5em 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+/* Navigation Styles */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 0.5em;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #1abc9c; /* Teal accent for hover */
+}
+
+/* Main Content Styles */
+main {
+    padding: 2em 1em; /* More padding around main content */
+    max-width: 960px; /* Max width for better readability on large screens */
+    margin: 20px auto; /* Center main content */
+    background-color: #ffffff; /* White background for content sections */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+}
+
+/* Section Styles */
+section {
+    padding: 2em;
+    margin-bottom: 2em; /* Space between sections */
+    border-bottom: 1px solid #e0e0e0; /* Separator line */
+}
+
+section:last-child {
+    border-bottom: none; /* No line for the last section */
+}
+
+section h2 {
+    color: #2c3e50; /* Dark blue-grey for section titles */
+    margin-top: 0;
+    font-size: 2em;
+    border-bottom: 2px solid #1abc9c; /* Teal underline for section titles */
+    padding-bottom: 0.3em;
+    display: inline-block;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #1a252f; /* Even darker blue-grey for footer */
+    color: #ecf0f1;
+    text-align: center;
+    padding: 1.5em 0;
+    /* position: fixed; remove fixed position to avoid overlap */
+    /* bottom: 0; */
+    width: 100%;
+    margin-top: 2em; /* Add margin to separate from content */
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Basic list styling for feature list (example) */
+#features ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    text-align: left;
+}
+
+#features ul li {
+    margin-bottom: 0.5em;
+}
+
+/* Contact section basic styling */
+#contact p {
+    margin-bottom: 0.5em;
+}
