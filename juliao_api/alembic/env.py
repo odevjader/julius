@@ -54,8 +54,8 @@ def get_url():
     # If it is an AsyncPostgresDsn, you need to ensure it's convertible to a sync URL for Alembic.
     # For simplicity, let's assume your settings.DATABASE_URL can be used directly or converted.
     # The original code used settings.DATABASE_URL.render_as_string(hide_password=False)
-    # Let's stick to that, assuming it produces a sync URL.
-    db_url = settings.DATABASE_URL.render_as_string(hide_password=False)
+    # In Pydantic V2, DSN objects are converted to string using str().
+    db_url = str(settings.DATABASE_URL)
     # Override with DATABASE_URL_LOCAL if present, for docker-compose context
     local_db_url = os.getenv("DATABASE_URL_LOCAL")
     return local_db_url if local_db_url else db_url
@@ -88,4 +88,44 @@ def do_run_migrations(connection):
     with context.begin_transaction():
         context.run_migrations()
 
-async def run_migrations
+async def run_migrations_online() -> None:
+    """Run migrations in 'online' mode.
+
+    In this scenario we need to create an Engine
+    and associate a connection with the context.
+
+    """
+    # Import app.core.config here if needed, or ensure get_url() works
+    # from app.core.config import settings # Already imported in get_url
+
+    # Using create_async_engine as suggested by modern Alembic templates for async apps
+    from sqlalchemy.ext.asyncio import create_async_engine
+
+    # Ensure settings is available
+    from app.core.config import settings
+
+    # Use ASYNC_DATABASE_URL for the async engine
+    db_url_async = str(settings.ASYNC_DATABASE_URL)
+
+    # Override with DATABASE_URL_LOCAL if present.
+    # Assumption: if DATABASE_URL_LOCAL is set, it's appropriate for async context here.
+    local_db_url = os.getenv("DATABASE_URL_LOCAL")
+
+    final_db_url = local_db_url if local_db_url else db_url_async
+
+    connectable = create_async_engine(
+        final_db_url, # Use the async URL
+        poolclass=pool.NullPool,
+    )
+
+    async with connectable.connect() as connection:
+        await connection.run_sync(do_run_migrations)
+
+    await connectable.dispose()
+
+
+if context.is_offline_mode():
+    run_migrations_offline()
+else:
+    import asyncio
+    asyncio.run(run_migrations_online())
