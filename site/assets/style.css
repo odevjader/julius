@@ -2,163 +2,311 @@
 
 /* --- Global Variables (CSS Custom Properties) --- */
 :root {
-    --primary-dark: #483D8B; /* Dark Slate Blue */
+    --primary-dark: #4A0D66; /* Roxo Escuro Intenso - Header */
+    --hero-background-dark: #5E3370; /* Roxo Ametista Escuro - Hero Section */
+    /* Outras opções para o Hero: #512E5F, #483D8B */
+
     --primary-medium: #9370DB; /* Medium Purple */
     --primary-light: #E6E6FA; /* Lavender */
     --accent-main: #FFD700; /* Gold */
     --accent-dark: #B8860B; /* Dark Goldenrod */
-    --text-dark: #2c2c2c; /* Dark Grey for text */
-    --text-light: #ffffff; /* White for text on dark backgrounds */
-    --bg-light: #f8f9fa; /* Very Light Grey for body background */
-    --bg-content: #ffffff; /* White for content boxes */
-    --font-heading: 'Bebas Neue', 'Arial Black', sans-serif; /* Strong sans-serif */
-    --font-body: 'Open Sans', 'Arial', sans-serif; /* Clean sans-serif */
+    --text-dark: #2c2c2c;
+    --text-light: #ffffff;
+    --bg-light: #f8f9fa;
+    --bg-content: #ffffff;
+    --font-heading: 'Bebas Neue', 'Arial Black', sans-serif;
+    --font-body: 'Open Sans', 'Arial', sans-serif;
+    --whatsapp-green: #128C7E; /* Verde Sóbrio do WhatsApp */
+    --whatsapp-dark-green: #075E54;
+}
+
+/* --- Base & Reset --- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 /* --- General Body Styles --- */
 body {
     font-family: var(--font-body);
-    margin: 0;
-    padding: 0;
     background-color: var(--bg-light);
     color: var(--text-dark);
     line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-/* --- Header Styles --- */
+/* --- Header Styles (Centralizado) --- */
 header {
     background-color: var(--primary-dark);
     color: var(--text-light);
-    padding: 1em 0; /* Reduced padding slightly */
-    text-align: center;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    padding: 0.8em 1.5em;
+    text-align: center; /* Centraliza o conteúdo inline/inline-block */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
 }
 
 header h1 {
-    margin: 0;
+    margin: 0 auto; /* Centraliza o H1 se ele for um bloco */
     font-family: var(--font-heading);
-    font-size: 3.5em; /* Larger for impact */
-    letter-spacing: 2px;
-    color: var(--accent-main); /* Julião's name in accent */
+    font-size: 2.8em;
+    letter-spacing: 1.5px;
+    color: var(--accent-main);
+    display: flex; /* Para alinhar ícone e texto */
+    align-items: center;
+    justify-content: center; /* Centraliza o conteúdo do H1 */
+    padding: 0.2em 0;
 }
 
-/* --- Navigation Styles --- */
+.juliao-logo-icon {
+    height: 1.2em;
+    width: auto;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+
+/* --- Navigation Styles (Centralizado) --- */
+nav {
+    width: 100%; /* Ocupa a largura para centralizar o ul */
+    margin-top: 0.3em;
+}
 nav ul {
     list-style-type: none;
     padding: 0;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
+    text-align: center; /* Centraliza os LIs que são inline-block */
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 12px; /* Slightly reduced margin */
+    display: inline-block;
+    margin: 0.3em 0.5em;
 }
 
 nav ul li a {
     color: var(--primary-light);
     text-decoration: none;
     font-weight: bold;
-    font-size: 1.1em;
-    transition: color 0.3s ease, transform 0.2s ease;
+    font-size: 0.95em;
+    padding: 0.4em 0.8em;
+    border-radius: 4px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+nav ul li a i {
+    margin-right: 6px;
 }
 
-nav ul li a:hover, nav ul li a:focus {
-    color: var(--accent-main); /* Yellow accent for hover */
-    transform: translateY(-2px); /* Subtle lift effect */
+nav ul li a:hover,
+nav ul li a:focus {
+    color: var(--accent-main);
+    background-color: rgba(255, 255, 255, 0.1);
+    outline: none;
 }
 
 /* --- Main Content Styles --- */
 main {
-    max-width: 1000px; /* Slightly wider */
-    margin: 30px auto; /* Center main content */
-    padding: 1.5em; /* Consistent padding */
+    max-width: 960px;
+    margin: 40px auto;
+    padding: 0 1.5em;
 }
 
 /* --- Section Styles --- */
 section {
     background-color: var(--bg-content);
-    padding: 2.5em; /* Generous padding within sections */
-    margin-bottom: 25px; /* Space between sections */
-    border-radius: 10px; /* Softer rounded corners */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* Softer, more modern shadow */
+    padding: 2.5em;
+    margin-bottom: 35px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
 }
 
 section h2 {
     font-family: var(--font-heading);
-    font-size: 2.8em; /* Prominent section titles */
-    color: var(--primary-dark);
-    margin-top: 0;
-    margin-bottom: 0.8em;
-    padding-bottom: 0.3em;
-    border-bottom: 3px solid var(--accent-main); /* Yellow accent underline */
-    display: inline-block; /* So underline only spans text */
-    letter-spacing: 1px;
+    font-size: 2.6em;
+    color: var(--primary-dark); /* Títulos de seção usam a cor roxa escura do header */
+    margin-bottom: 1em;
+    padding-bottom: 0.4em;
+    border-bottom: 3px solid var(--accent-main);
+    display: inline-block;
+    letter-spacing: 0.5px;
 }
-/* Consider adding a small icon next to h2 titles later. */
-/* Example: section h2::before { content: "💡"; margin-right: 10px; } */
+section h2 i {
+    margin-right: 12px;
+    font-size: 0.85em;
+    /* Cor dos ícones dos títulos ajustada para melhor contraste com o --primary-dark */
+    color: var(--primary-medium);
+}
 
 
 /* --- Specific Section Styling --- */
 
-/* Hero Section */
+/* Persona Section (Who is Julião) --- */
+.persona-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5em;
+    text-align: center;
+}
+.persona-section .text-content {
+    order: 2;
+}
+.persona-section .image-content {
+    order: 1;
+    flex-shrink: 0;
+}
+#julius-image {
+    max-width: 250px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    border: 4px solid var(--primary-medium);
+}
+
+
+/* Hero Section (Cor de fundo alterada) */
 .hero-section {
-    background-color: var(--primary-medium); /* Medium Purple background */
+    background-color: var(--hero-background-dark); /* NOVA COR DO HERO AQUI */
     color: var(--text-light);
     text-align: center;
-    padding: 3em 2em;
+    padding: 3.5em 2em;
+    border-radius: 12px;
 }
 .hero-section h2 {
     font-family: var(--font-heading);
-    font-size: 3em; /* Even larger for hero tagline */
+    font-size: 3.2em;
     color: var(--text-light);
-    border-bottom: none; /* No underline for hero tagline */
-    margin-bottom: 0.5em;
+    border-bottom: none;
+    margin-bottom: 0.3em;
 }
 .hero-section p {
-    font-size: 1.3em;
+    font-size: 1.4em;
     font-weight: 300;
+    margin-top: 0;
+    color: var(--text-light);
 }
 
 /* "Who is Julião?" Section */
 #who-is-juliao p {
-    font-size: 1.1em;
+    font-size: 1.15em;
     margin-bottom: 1em;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
 }
-/* Possible image placeholder for Julião's character here */
-/* #who-is-juliao { position: relative; } */
-/* #who-is-juliao::after { content: ""; display: block; width: 100px; height: 100px; background: var(--accent-light); border-radius: 50%; position: absolute; top: 20px; right: 20px; opacity: 0.5; } */
+#who-is-juliao h2 i {
+    color: var(--primary-dark); /* Ícone do título da seção Quem é Julião */
+}
 
 
-/* Features Section */
-#features ul {
-    list-style-type: none; /* Remove default bullets */
+/* --- WhatsApp Feature Section Styling --- */
+.whatsapp-feature-section {
+    background-color: var(--whatsapp-green);
+    color: var(--text-light);
+    border-left: 10px solid var(--whatsapp-dark-green);
+    padding: 2.5em;
+}
+
+.whatsapp-feature-section h2 {
+    color: var(--text-light);
+    border-bottom-color: var(--text-light);
+}
+.whatsapp-feature-section h2 .fab.fa-whatsapp {
+    margin-left: 10px;
+    font-size: 0.9em;
+    color: var(--text-light);
+}
+.whatsapp-feature-section h2 i:not(.fab.fa-whatsapp) {
+    color: var(--text-light);
+}
+
+
+.whatsapp-feature-section p {
+    font-size: 1.2em;
+    margin-bottom: 1.5em;
+}
+
+.whatsapp-feature-section ul {
+    list-style-type: none;
     padding-left: 0;
 }
-#features ul li {
-    background-color: var(--primary-light); /* Lavender background for items */
-    padding: 1em 1.5em;
+
+.whatsapp-feature-section ul li {
+    background-color: rgba(255, 255, 255, 0.12);
+    padding: 1em 1.4em;
     margin-bottom: 1em;
     border-radius: 8px;
-    border-left: 5px solid var(--primary-medium); /* Accent border */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+.whatsapp-feature-section ul li:hover {
+    background-color: rgba(255, 255, 255, 0.22);
+}
+.whatsapp-feature-section ul li strong {
+    color: #f0f0f0;
+}
+.whatsapp-feature-section ul li i {
+    margin-right: 8px;
+    color: var(--text-light);
+    width: 20px;
+    text-align: center;
+}
+
+
+/* Features Section (Dashboard Web) */
+#features ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#features p {
+    font-size: 1.15em;
+    margin-bottom: 1.5em;
+}
+
+#features ul li {
+    background-color: var(--primary-light);
+    padding: 1.3em 1.6em;
+    margin-bottom: 1.3em;
+    border-radius: 8px;
+    border-left: 6px solid var(--primary-medium);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 #features ul li:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
 }
 #features ul li strong {
     color: var(--primary-dark);
-    font-weight: bold; /* Already bold, but can be var(--font-heading) if desired */
+    font-weight: bold;
 }
-/* Consider small icons for each feature item */
-/* #features ul li::before { content: "✔️"; color: var(--primary-medium); margin-right: 10px; font-weight: bold; } */
+#features ul li i {
+    margin-right: 8px;
+    color: var(--primary-dark);
+    width: 20px;
+    text-align: center;
+}
+#features h2 i {
+    color: var(--primary-dark); /* Ícone do título da seção Features */
+}
+
 
 /* "Why Julião?" Section */
+#why-juliao h2 i {
+    color: var(--primary-dark); /* Ícone do título da seção Why Julião */
+}
 #why-juliao p {
-    font-size: 1.1em;
-    margin-bottom: 0.8em;
+    font-size: 1.15em;
+    margin-bottom: 1em;
 }
 #why-juliao strong {
     color: var(--primary-dark);
@@ -167,96 +315,204 @@ section h2 {
 
 /* Call to Action (CTA) Section */
 .cta-section {
-    background-color: var(--primary-dark);
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-medium) 100%);
     color: var(--text-light);
     text-align: center;
     padding: 3em 2em;
+    border-radius: 12px;
 }
 .cta-section h2 {
-    color: var(--text-light); /* Override default section h2 color */
-    border-bottom-color: var(--accent-main); /* Keep accent underline */
+    color: var(--text-light);
+    border-bottom-color: var(--accent-main);
+}
+.cta-section h2 i {
+     color: var(--text-light);
 }
 .cta-section p {
-    font-size: 1.15em;
-    margin-bottom: 1.5em;
+    font-size: 1.2em;
+    margin-bottom: 1.8em;
 }
 .cta-section form {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px; /* Space between input and button */
+    gap: 12px;
 }
 .cta-section input[type="email"] {
-    padding: 0.8em 1em;
+    padding: 1em 1.3em;
     font-size: 1em;
-    border-radius: 5px;
+    border-radius: 6px;
     border: 2px solid var(--primary-light);
-    background-color: var(--bg-light);
+    background-color: rgba(255,255,255,0.9);
     color: var(--text-dark);
-    width: clamp(250px, 40%, 400px); /* Responsive width */
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    width: clamp(280px, 80%, 450px);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 .cta-section input[type="email"]:focus {
     border-color: var(--accent-main);
-    box-shadow: 0 0 8px var(--accent-main-transparent, rgba(255,215,0,0.5)); /* Fallback if var not set */
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(255,215,0,0.4);
     outline: none;
 }
 .cta-section button[type="submit"] {
     background-color: var(--accent-main);
-    color: var(--text-dark); /* Dark text on yellow button */
+    color: var(--text-dark);
     font-family: var(--font-heading);
-    font-size: 1.2em;
-    padding: 0.8em 1.8em;
+    font-size: 1.3em;
+    padding: 0.9em 2.2em;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
     letter-spacing: 1px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    width: clamp(280px, 80%, 450px);
 }
-.cta-section button[type="submit"]:hover {
-    background-color: var(--accent-dark); /* Darker yellow on hover */
+.cta-section button[type="submit"] i {
+    margin-right: 8px;
+}
+
+.cta-section button[type="submit"]:hover,
+.cta-section button[type="submit"]:focus {
+    background-color: var(--accent-dark);
     color: var(--text-light);
-    transform: translateY(-2px);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    outline: none;
 }
 .cta-section small {
     display: block;
-    margin-top: 1em;
+    margin-top: 1.2em;
     font-size: 0.9em;
-    opacity: 0.8;
+    opacity: 0.85;
 }
 
 /* --- Footer Styles --- */
 footer {
-    background-color: var(--text-dark); /* Very dark footer */
-    color: var(--primary-light); /* Light text */
+    background-color: var(--text-dark);
+    color: var(--primary-light);
     text-align: center;
-    padding: 2em 0;
-    margin-top: 2em;
-    font-size: 0.95em;
+    padding: 2.5em 1em;
+    margin-top: 3em;
+    font-size: 0.9em;
 }
 
 footer p {
     margin: 0;
 }
 
-/* --- Utility Classes (Optional) --- */
-.text-center {
-    text-align: center;
-}
-.sr-only { /* For screen readers */
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0,0,0,0);
-    border: 0;
+/* --- Media Queries for Responsiveness --- */
+
+@media (min-width: 769px) {
+    /* Header permanece centralizado, então não há mudanças específicas de layout aqui
+       além das que já estavam para o comportamento de empilhamento. */
+
+    .persona-section {
+        flex-direction: row;
+        text-align: left;
+        gap: 2.5em;
+    }
+    .persona-section .text-content {
+        order: 1;
+    }
+    .persona-section .image-content {
+        order: 2;
+        flex-shrink: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    #julius-image {
+        max-width: 300px;
+    }
+
+    .cta-section form {
+        flex-direction: row; /* Formulário CTA lado a lado em desktop */
+        gap: 12px;
+    }
+     .cta-section input[type="email"],
+    .cta-section button[type="submit"] {
+        width: auto; /* Largura automática para caber lado a lado */
+    }
 }
 
-/* --- Font Import (Example - place at the very top of the file if used) --- */
-/* @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300;400;700&display=swap'); */
-/* Note: For this environment, I'm not using @import. Fonts listed in --font-heading and --font-body are fallbacks. */
-/* If Bebas Neue or Open Sans are not available on the system, it will use Arial Black/Arial. */
-/* For a real project, ensure fonts are hosted or properly linked via HTML. */
+
+@media (max-width: 768px) {
+    header { /* Garantir que em telas menores o header se comporte bem centralizado */
+        /* display: flex; flex-direction: column; align-items: center; já está definido */
+    }
+    header h1 {
+        font-size: 2.5em;
+    }
+    nav ul li {
+        margin: 0.3em 0.4em;
+    }
+     nav ul li a {
+        font-size: 0.9em;
+    }
+    section {
+        padding: 2em 1.5em;
+    }
+    section h2 {
+        font-size: 2.2em;
+    }
+    .hero-section h2 {
+        font-size: 2.5em;
+    }
+    .hero-section p {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 0.8em 1em;
+    }
+    header h1 {
+        font-size: 2.1em;
+    }
+    .juliao-logo-icon {
+        height: 1.1em;
+        margin-right: 8px;
+    }
+    nav ul li {
+        display: block; /* Empilhar itens da navegação */
+        margin: 0.5em 0;
+    }
+     nav ul li a {
+        display: block;
+        font-size: 1em;
+    }
+    section {
+        padding: 1.5em 1em;
+    }
+    section h2 {
+        font-size: 1.9em;
+    }
+    .hero-section h2 {
+        font-size: 2.1em;
+    }
+     .hero-section p {
+        font-size: 1.1em;
+    }
+    .whatsapp-feature-section h2,
+    #features h2 {
+        font-size: 1.9em;
+    }
+    .whatsapp-feature-section ul li,
+    #features ul li {
+        font-size: 1em;
+        padding: 0.9em 1.1em;
+    }
+    .cta-section input[type="email"],
+    .cta-section button[type="submit"] {
+        font-size: 0.95em;
+        width: 95%;
+    }
+    .cta-section p {
+        font-size: 1.1em;
+    }
+    #julius-image {
+        max-width: 200px;
+    }
+}
