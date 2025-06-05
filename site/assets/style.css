@@ -4,8 +4,6 @@
 :root {
     --primary-dark: #4A0D66; /* Roxo Escuro Intenso - Header */
     --hero-background-dark: #5E3370; /* Roxo Ametista Escuro - Hero Section */
-    /* Outras opções para o Hero: #512E5F, #483D8B */
-
     --primary-medium: #9370DB; /* Medium Purple */
     --primary-light: #E6E6FA; /* Lavender */
     --accent-main: #FFD700; /* Gold */
@@ -43,66 +41,66 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* --- Header Styles (Centralizado) --- */
+/* --- Header Styles (NÃO MAIS FIXO e Ajustado para Mobile) --- */
 header {
     background-color: var(--primary-dark);
     color: var(--text-light);
-    padding: 0.8em 1.5em;
-    text-align: center; /* Centraliza o conteúdo inline/inline-block */
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    padding: 0.5em 1em; /* Padding vertical e horizontal reduzidos para mobile */
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Sombra mais sutil */
+    /* REMOVIDO: position: sticky; */
+    /* REMOVIDO: top: 0; */
+    /* REMOVIDO: z-index: 1000; */
     width: 100%;
 }
 
 header h1 {
-    margin: 0 auto; /* Centraliza o H1 se ele for um bloco */
+    margin: 0 auto;
     font-family: var(--font-heading);
-    font-size: 2.8em;
-    letter-spacing: 1.5px;
+    font-size: 2.2em; /* Tamanho do H1 reduzido para mobile */
+    letter-spacing: 1px; /* Espaçamento entre letras reduzido */
     color: var(--accent-main);
-    display: flex; /* Para alinhar ícone e texto */
+    display: flex;
     align-items: center;
-    justify-content: center; /* Centraliza o conteúdo do H1 */
-    padding: 0.2em 0;
+    justify-content: center;
+    padding: 0.1em 0; /* Padding interno do H1 reduzido */
 }
 
 .juliao-logo-icon {
-    height: 1.2em;
+    height: 1em; /* Altura do ícone da logo ajustada para o novo H1 */
     width: auto;
-    margin-right: 10px;
-    vertical-align: middle;
+    margin-right: 8px; /* Margem do ícone reduzida */
 }
 
 
-/* --- Navigation Styles (Centralizado) --- */
+/* --- Navigation Styles (Ajustado para Mobile) --- */
 nav {
-    width: 100%; /* Ocupa a largura para centralizar o ul */
-    margin-top: 0.3em;
+    width: 100%;
+    margin-top: 0.2em; /* Espaço entre H1 e Nav reduzido */
 }
 nav ul {
     list-style-type: none;
     padding: 0;
-    text-align: center; /* Centraliza os LIs que são inline-block */
+    text-align: center;
 }
 
 nav ul li {
     display: inline-block;
-    margin: 0.3em 0.5em;
+    margin: 0.2em 0.3em; /* Margens dos itens de navegação reduzidas */
 }
 
 nav ul li a {
     color: var(--primary-light);
     text-decoration: none;
     font-weight: bold;
-    font-size: 0.95em;
-    padding: 0.4em 0.8em;
-    border-radius: 4px;
+    font-size: 0.8em; /* Tamanho da fonte da navegação reduzido para mobile */
+    padding: 0.3em 0.5em; /* Padding dos links de navegação reduzido */
+    border-radius: 3px; /* Raio da borda sutilmente ajustado */
     transition: color 0.3s ease, background-color 0.3s ease;
 }
 nav ul li a i {
-    margin-right: 6px;
+    margin-right: 4px; /* Espaço do ícone no link reduzido */
+    font-size: 0.9em; /* Tamanho do ícone no link ajustado */
 }
 
 nav ul li a:hover,
@@ -115,33 +113,32 @@ nav ul li a:focus {
 /* --- Main Content Styles --- */
 main {
     max-width: 960px;
-    margin: 40px auto;
-    padding: 0 1.5em;
+    margin: 20px auto; /* Margem superior reduzida após header não fixo */
+    padding: 0 1em; /* Padding lateral para mobile */
 }
 
 /* --- Section Styles --- */
 section {
     background-color: var(--bg-content);
-    padding: 2.5em;
-    margin-bottom: 35px;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    padding: 2em 1.5em; /* Padding das seções ajustado */
+    margin-bottom: 25px; /* Margem entre seções ajustada */
+    border-radius: 10px; /* Raio da borda ajustado */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06); /* Sombra sutil */
 }
 
 section h2 {
     font-family: var(--font-heading);
-    font-size: 2.6em;
-    color: var(--primary-dark); /* Títulos de seção usam a cor roxa escura do header */
-    margin-bottom: 1em;
-    padding-bottom: 0.4em;
-    border-bottom: 3px solid var(--accent-main);
+    font-size: 2.2em; /* Tamanho dos títulos de seção ajustado */
+    color: var(--primary-dark);
+    margin-bottom: 0.8em; /* Margem inferior do H2 ajustada */
+    padding-bottom: 0.3em; /* Padding inferior do H2 ajustado */
+    border-bottom: 2px solid var(--accent-main); /* Borda mais fina */
     display: inline-block;
     letter-spacing: 0.5px;
 }
 section h2 i {
-    margin-right: 12px;
-    font-size: 0.85em;
-    /* Cor dos ícones dos títulos ajustada para melhor contraste com o --primary-dark */
+    margin-right: 10px; /* Margem do ícone no H2 ajustada */
+    font-size: 0.8em; /* Tamanho do ícone no H2 ajustado */
     color: var(--primary-medium);
 }
 
@@ -153,7 +150,7 @@ section h2 i {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.5em;
+    gap: 1em; /* Espaço entre texto e imagem ajustado */
     text-align: center;
 }
 .persona-section .text-content {
@@ -162,33 +159,34 @@ section h2 i {
 .persona-section .image-content {
     order: 1;
     flex-shrink: 0;
+    margin-bottom: 0.5em; /* Pequena margem abaixo da imagem da persona */
 }
 #julius-image {
-    max-width: 250px;
+    max-width: 200px; /* Tamanho da imagem da persona para mobile */
     height: auto;
     border-radius: 50%;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-    border: 4px solid var(--primary-medium);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+    border: 3px solid var(--primary-medium);
 }
 
 
-/* Hero Section (Cor de fundo alterada) */
+/* Hero Section */
 .hero-section {
-    background-color: var(--hero-background-dark); /* NOVA COR DO HERO AQUI */
+    background-color: var(--hero-background-dark);
     color: var(--text-light);
     text-align: center;
-    padding: 3.5em 2em;
-    border-radius: 12px;
+    padding: 2.5em 1.5em; /* Padding da hero section ajustado */
+    border-radius: 10px;
 }
 .hero-section h2 {
     font-family: var(--font-heading);
-    font-size: 3.2em;
+    font-size: 2.5em; /* Tamanho do H2 da hero ajustado */
     color: var(--text-light);
     border-bottom: none;
-    margin-bottom: 0.3em;
+    margin-bottom: 0.2em;
 }
 .hero-section p {
-    font-size: 1.4em;
+    font-size: 1.2em; /* Tamanho do parágrafo da hero ajustado */
     font-weight: 300;
     margin-top: 0;
     color: var(--text-light);
@@ -196,14 +194,14 @@ section h2 i {
 
 /* "Who is Julião?" Section */
 #who-is-juliao p {
-    font-size: 1.15em;
-    margin-bottom: 1em;
-    max-width: 650px;
+    font-size: 1.1em; /* Tamanho do parágrafo ajustado */
+    margin-bottom: 0.8em;
+    max-width: 600px; /* Largura máxima do parágrafo ajustada */
     margin-left: auto;
     margin-right: auto;
 }
 #who-is-juliao h2 i {
-    color: var(--primary-dark); /* Ícone do título da seção Quem é Julião */
+    color: var(--primary-dark);
 }
 
 
@@ -211,18 +209,18 @@ section h2 i {
 .whatsapp-feature-section {
     background-color: var(--whatsapp-green);
     color: var(--text-light);
-    border-left: 10px solid var(--whatsapp-dark-green);
-    padding: 2.5em;
+    border-left: 8px solid var(--whatsapp-dark-green); /* Borda ajustada */
+    padding: 2em 1.5em; /* Padding ajustado */
 }
 
 .whatsapp-feature-section h2 {
     color: var(--text-light);
     border-bottom-color: var(--text-light);
+    font-size: 2em; /* Tamanho do H2 da seção WhatsApp ajustado */
 }
 .whatsapp-feature-section h2 .fab.fa-whatsapp {
-    margin-left: 10px;
-    font-size: 0.9em;
-    color: var(--text-light);
+    margin-left: 8px;
+    font-size: 0.85em;
 }
 .whatsapp-feature-section h2 i:not(.fab.fa-whatsapp) {
     color: var(--text-light);
@@ -230,8 +228,8 @@ section h2 i {
 
 
 .whatsapp-feature-section p {
-    font-size: 1.2em;
-    margin-bottom: 1.5em;
+    font-size: 1.1em; /* Tamanho do parágrafo ajustado */
+    margin-bottom: 1.2em;
 }
 
 .whatsapp-feature-section ul {
@@ -241,10 +239,10 @@ section h2 i {
 
 .whatsapp-feature-section ul li {
     background-color: rgba(255, 255, 255, 0.12);
-    padding: 1em 1.4em;
-    margin-bottom: 1em;
-    border-radius: 8px;
-    font-size: 1.1em;
+    padding: 0.8em 1.2em; /* Padding dos itens da lista ajustado */
+    margin-bottom: 0.8em;
+    border-radius: 6px; /* Raio da borda ajustado */
+    font-size: 1em; /* Tamanho da fonte dos itens ajustado */
     transition: background-color 0.3s ease;
 }
 .whatsapp-feature-section ul li:hover {
@@ -254,9 +252,9 @@ section h2 i {
     color: #f0f0f0;
 }
 .whatsapp-feature-section ul li i {
-    margin-right: 8px;
+    margin-right: 6px;
     color: var(--text-light);
-    width: 20px;
+    width: 18px; /* Largura do ícone ajustada */
     text-align: center;
 }
 
@@ -268,45 +266,51 @@ section h2 i {
 }
 
 #features p {
-    font-size: 1.15em;
-    margin-bottom: 1.5em;
+    font-size: 1.1em; /* Tamanho do parágrafo ajustado */
+    margin-bottom: 1.2em;
+}
+#features h2 {
+    font-size: 2em; /* Tamanho do H2 da seção Features ajustado */
 }
 
 #features ul li {
     background-color: var(--primary-light);
-    padding: 1.3em 1.6em;
-    margin-bottom: 1.3em;
-    border-radius: 8px;
-    border-left: 6px solid var(--primary-medium);
-    box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+    padding: 1em 1.3em; /* Padding dos itens da lista ajustado */
+    margin-bottom: 1em;
+    border-radius: 6px;
+    border-left: 5px solid var(--primary-medium); /* Borda ajustada */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04); /* Sombra ajustada */
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 #features ul li:hover {
-    transform: translateY(-4px) scale(1.01);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+    transform: translateY(-3px) scale(1.01); /* Efeito hover sutil */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 #features ul li strong {
     color: var(--primary-dark);
     font-weight: bold;
 }
 #features ul li i {
-    margin-right: 8px;
+    margin-right: 6px;
     color: var(--primary-dark);
-    width: 20px;
+    width: 18px;
     text-align: center;
 }
 #features h2 i {
-    color: var(--primary-dark); /* Ícone do título da seção Features */
+    color: var(--primary-dark);
 }
 
 
 /* "Why Julião?" Section */
+#why-juliao h2 {
+    font-size: 2em; /* Tamanho do H2 da seção Why Julião ajustado */
+}
 #why-juliao h2 i {
-    color: var(--primary-dark); /* Ícone do título da seção Why Julião */
+    color: var(--primary-dark);
 }
 #why-juliao p {
-    font-size: 1.15em;
-    margin-bottom: 1em;
+    font-size: 1.1em; /* Tamanho do parágrafo ajustado */
+    margin-bottom: 0.8em;
 }
 #why-juliao strong {
     color: var(--primary-dark);
@@ -318,35 +322,36 @@ section h2 i {
     background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-medium) 100%);
     color: var(--text-light);
     text-align: center;
-    padding: 3em 2em;
-    border-radius: 12px;
+    padding: 2.5em 1.5em; /* Padding ajustado */
+    border-radius: 10px;
 }
 .cta-section h2 {
     color: var(--text-light);
     border-bottom-color: var(--accent-main);
+    font-size: 2em; /* Tamanho do H2 da CTA ajustado */
 }
 .cta-section h2 i {
      color: var(--text-light);
 }
 .cta-section p {
-    font-size: 1.2em;
-    margin-bottom: 1.8em;
+    font-size: 1.1em; /* Tamanho do parágrafo da CTA ajustado */
+    margin-bottom: 1.5em;
 }
 .cta-section form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 12px;
+    gap: 10px; /* Espaço entre input e botão ajustado */
 }
 .cta-section input[type="email"] {
-    padding: 1em 1.3em;
-    font-size: 1em;
-    border-radius: 6px;
+    padding: 0.9em 1.2em; /* Padding do input ajustado */
+    font-size: 0.95em; /* Tamanho da fonte do input ajustado */
+    border-radius: 5px; /* Raio da borda ajustado */
     border: 2px solid var(--primary-light);
     background-color: rgba(255,255,255,0.9);
     color: var(--text-dark);
-    width: clamp(280px, 80%, 450px);
+    width: clamp(260px, 90%, 400px); /* Largura do input ajustada */
     transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 .cta-section input[type="email"]:focus {
@@ -359,32 +364,32 @@ section h2 i {
     background-color: var(--accent-main);
     color: var(--text-dark);
     font-family: var(--font-heading);
-    font-size: 1.3em;
-    padding: 0.9em 2.2em;
+    font-size: 1.2em; /* Tamanho da fonte do botão ajustado */
+    padding: 0.8em 2em; /* Padding do botão ajustado */
     border: none;
-    border-radius: 6px;
+    border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
     letter-spacing: 1px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
-    width: clamp(280px, 80%, 450px);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2); /* Sombra do botão ajustada */
+    width: clamp(260px, 90%, 400px);
 }
 .cta-section button[type="submit"] i {
-    margin-right: 8px;
+    margin-right: 6px;
 }
 
 .cta-section button[type="submit"]:hover,
 .cta-section button[type="submit"]:focus {
     background-color: var(--accent-dark);
     color: var(--text-light);
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    transform: translateY(-2px) scale(1.01); /* Efeito hover sutil */
+    box-shadow: 0 5px 12px rgba(0,0,0,0.25);
     outline: none;
 }
 .cta-section small {
     display: block;
-    margin-top: 1.2em;
-    font-size: 0.9em;
+    margin-top: 1em; /* Margem superior do small ajustada */
+    font-size: 0.85em; /* Tamanho da fonte do small ajustado */
     opacity: 0.85;
 }
 
@@ -393,9 +398,9 @@ footer {
     background-color: var(--text-dark);
     color: var(--primary-light);
     text-align: center;
-    padding: 2.5em 1em;
-    margin-top: 3em;
-    font-size: 0.9em;
+    padding: 2em 1em; /* Padding do footer ajustado */
+    margin-top: 2.5em; /* Margem superior do footer ajustada */
+    font-size: 0.85em; /* Tamanho da fonte do footer ajustado */
 }
 
 footer p {
@@ -404,9 +409,50 @@ footer p {
 
 /* --- Media Queries for Responsiveness --- */
 
+/* Estilos para telas maiores (Desktop) */
 @media (min-width: 769px) {
-    /* Header permanece centralizado, então não há mudanças específicas de layout aqui
-       além das que já estavam para o comportamento de empilhamento. */
+    header {
+        padding: 0.8em 1.5em; /* Restaurar padding original do header para desktop */
+    }
+    header h1 {
+        font-size: 2.8em; /* Restaurar H1 para desktop */
+    }
+    .juliao-logo-icon {
+        height: 1.2em; /* Restaurar ícone da logo para desktop */
+        margin-right: 10px;
+    }
+    nav {
+        margin-top: 0.3em; /* Restaurar margem do nav para desktop */
+    }
+    nav ul li {
+        margin: 0.3em 0.5em; /* Restaurar margens dos itens de nav para desktop */
+    }
+    nav ul li a {
+        font-size: 0.95em; /* Restaurar fonte dos links de nav para desktop */
+        padding: 0.4em 0.8em;
+    }
+    nav ul li a i {
+        margin-right: 6px;
+        font-size: unset; /* Resetar tamanho do ícone para herdar */
+    }
+
+    main {
+        margin: 40px auto; /* Restaurar margem do main para desktop */
+        padding: 0 1.5em; /* Restaurar padding do main para desktop */
+    }
+    section {
+        padding: 2.5em; /* Restaurar padding das seções para desktop */
+        margin-bottom: 35px;
+        border-radius: 12px;
+    }
+    section h2 {
+        font-size: 2.6em; /* Restaurar H2 das seções para desktop */
+        border-bottom-width: 3px; /* Restaurar borda do H2 */
+    }
+    section h2 i {
+        margin-right: 12px;
+        font-size: 0.85em;
+    }
 
     .persona-section {
         flex-direction: row;
@@ -421,98 +467,145 @@ footer p {
         flex-shrink: 0;
         margin-left: 0;
         margin-right: 0;
+        margin-bottom: 0; /* Remover margem inferior da imagem no desktop */
     }
     #julius-image {
-        max-width: 300px;
+        max-width: 300px; /* Restaurar tamanho da imagem da persona para desktop */
+        border-width: 4px; /* Restaurar borda da imagem */
     }
 
-    .cta-section form {
-        flex-direction: row; /* Formulário CTA lado a lado em desktop */
-        gap: 12px;
-    }
-     .cta-section input[type="email"],
-    .cta-section button[type="submit"] {
-        width: auto; /* Largura automática para caber lado a lado */
-    }
-}
-
-
-@media (max-width: 768px) {
-    header { /* Garantir que em telas menores o header se comporte bem centralizado */
-        /* display: flex; flex-direction: column; align-items: center; já está definido */
-    }
-    header h1 {
-        font-size: 2.5em;
-    }
-    nav ul li {
-        margin: 0.3em 0.4em;
-    }
-     nav ul li a {
-        font-size: 0.9em;
-    }
-    section {
-        padding: 2em 1.5em;
-    }
-    section h2 {
-        font-size: 2.2em;
+    .hero-section {
+        padding: 3.5em 2em; /* Restaurar padding da hero para desktop */
+        border-radius: 12px;
     }
     .hero-section h2 {
-        font-size: 2.5em;
+        font-size: 3.2em; /* Restaurar H2 da hero para desktop */
     }
     .hero-section p {
-        font-size: 1.2em;
+        font-size: 1.4em; /* Restaurar parágrafo da hero para desktop */
+    }
+
+    #who-is-juliao p {
+        font-size: 1.15em; /* Restaurar parágrafo para desktop */
+        max-width: 650px;
+    }
+
+    .whatsapp-feature-section {
+        padding: 2.5em; /* Restaurar padding para desktop */
+        border-left-width: 10px; /* Restaurar borda para desktop */
+    }
+    .whatsapp-feature-section h2 {
+        font-size: 2.2em; /* Restaurar H2 para desktop (ajustei um pouco) */
+    }
+    .whatsapp-feature-section h2 .fab.fa-whatsapp {
+        margin-left: 10px;
+        font-size: 0.9em;
+    }
+    .whatsapp-feature-section p {
+        font-size: 1.2em; /* Restaurar parágrafo para desktop */
+    }
+    .whatsapp-feature-section ul li {
+        padding: 1em 1.4em; /* Restaurar padding dos itens para desktop */
+        font-size: 1.1em; /* Restaurar fonte dos itens para desktop */
+        border-radius: 8px;
+    }
+    .whatsapp-feature-section ul li i {
+        width: 20px;
+        margin-right: 8px;
+    }
+
+    #features h2 {
+        font-size: 2.2em; /* Restaurar H2 para desktop (ajustei um pouco) */
+    }
+    #features p {
+        font-size: 1.15em; /* Restaurar parágrafo para desktop */
+    }
+    #features ul li {
+        padding: 1.3em 1.6em; /* Restaurar padding dos itens para desktop */
+        border-radius: 8px;
+        border-left-width: 6px; /* Restaurar borda para desktop */
+    }
+    #features ul li i {
+        width: 20px;
+        margin-right: 8px;
+    }
+
+    #why-juliao h2 {
+        font-size: 2.2em; /* Restaurar H2 para desktop (ajustei um pouco) */
+    }
+    #why-juliao p {
+        font-size: 1.15em; /* Restaurar parágrafo para desktop */
+    }
+
+    .cta-section {
+        padding: 3em 2em; /* Restaurar padding para desktop */
+        border-radius: 12px;
+    }
+    .cta-section h2 {
+        font-size: 2.2em; /* Restaurar H2 para desktop (ajustei um pouco) */
+    }
+    .cta-section p {
+        font-size: 1.2em; /* Restaurar parágrafo para desktop */
+    }
+    .cta-section form {
+        flex-direction: row;
+        gap: 12px;
+    }
+    .cta-section input[type="email"] {
+        padding: 1em 1.3em; /* Restaurar padding do input para desktop */
+        font-size: 1em; /* Restaurar fonte do input para desktop */
+        width: clamp(280px, 50%, 450px); /* Permitir que seja mais flexível no desktop */
+        border-radius: 6px;
+    }
+    .cta-section button[type="submit"] {
+        font-size: 1.3em; /* Restaurar fonte do botão para desktop */
+        padding: 0.9em 2.2em; /* Restaurar padding do botão para desktop */
+        width: auto; /* Largura automática para desktop */
+        border-radius: 6px;
+    }
+    .cta-section button[type="submit"] i {
+        margin-right: 8px;
+    }
+    .cta-section small {
+        font-size: 0.9em; /* Restaurar fonte do small para desktop */
+        margin-top: 1.2em;
+    }
+
+    footer {
+        padding: 2.5em 1em; /* Restaurar padding do footer para desktop */
+        margin-top: 3em;
+        font-size: 0.9em; /* Restaurar fonte do footer para desktop */
     }
 }
 
+/* Ajustes para telas muito pequenas, se necessário, podem continuar aqui,
+   mas a base já está mais focada em mobile-first para o header. */
 @media (max-width: 480px) {
-    header {
-        padding: 0.8em 1em;
-    }
+    /* Os estilos já definidos para mobile devem cobrir bem aqui.
+       Pode-se fazer ajustes finos se algo específico quebrar. */
     header h1 {
-        font-size: 2.1em;
+        font-size: 2em;
     }
     .juliao-logo-icon {
-        height: 1.1em;
-        margin-right: 8px;
+        height: 0.9em;
+    }
+    nav ul li a {
+        font-size: 0.75em; /* Ainda menor para telas muito pequenas se os itens não couberem */
+        padding: 0.3em 0.4em;
     }
     nav ul li {
-        display: block; /* Empilhar itens da navegação */
-        margin: 0.5em 0;
+        margin: 0.2em; /* Menor margem ainda */
     }
-     nav ul li a {
+
+    /* Se os itens da navegação ainda estiverem muito apertados, empilhar: */
+    /*
+    nav ul li {
         display: block;
-        font-size: 1em;
+        margin: 0.4em 0;
     }
-    section {
-        padding: 1.5em 1em;
+    nav ul li a {
+        display: block;
+        font-size: 0.9em;
     }
-    section h2 {
-        font-size: 1.9em;
-    }
-    .hero-section h2 {
-        font-size: 2.1em;
-    }
-     .hero-section p {
-        font-size: 1.1em;
-    }
-    .whatsapp-feature-section h2,
-    #features h2 {
-        font-size: 1.9em;
-    }
-    .whatsapp-feature-section ul li,
-    #features ul li {
-        font-size: 1em;
-        padding: 0.9em 1.1em;
-    }
-    .cta-section input[type="email"],
-    .cta-section button[type="submit"] {
-        font-size: 0.95em;
-        width: 95%;
-    }
-    .cta-section p {
-        font-size: 1.1em;
-    }
-    #julius-image {
-        max-width: 200px;
-    }
+    */
 }
