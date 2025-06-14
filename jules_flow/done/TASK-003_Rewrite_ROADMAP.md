@@ -2,7 +2,7 @@
 id: TASK-003
 title: "Reescrever ROADMAP (pt-br) e Alinhar Estrutura de Pastas"
 epic: "Planejamento"
-status: backlog
+status: done
 priority: medium
 dependencies: []
 assignee: Jules
@@ -35,4 +35,10 @@ O roadmap atual contém duas seções distintas de planejamento (uma detalhada c
 
 ### Relatório de Execução
 
-(Esta seção deve ser deixada em branco)
+O arquivo `/ROADMAP.md` foi integralmente reescrito em português brasileiro (pt-br).
+As seções de planejamento anteriores (detalhada por fases e a de alto nível) foram consolidadas em uma única estrutura de roadmap mais clara e estratégica, utilizando a seção de alto nível como base.
+A estrutura de pastas foi clarificada: `frontend/` para o dashboard web (React.js) e `site/` para páginas estáticas de apresentação, e estas informações foram integradas ao roadmap.
+Informações desatualizadas, excessivamente granulares ou específicas de atribuição de tarefas foram removidas para focar nos objetivos estratégicos.
+O roadmap resultante está mais coeso, atualizado e serve como um guia central para o desenvolvimento do projeto Julião.
+Todos os critérios de aceitação foram atendidos.
+```
