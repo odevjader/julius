@@ -2,7 +2,7 @@
 id: TASK-002
 title: "Reescrever README e Mover Setup para Docs (pt-br)"
 epic: "Documentação"
-status: backlog
+status: done
 priority: medium
 dependencies: []
 assignee: Jules
@@ -31,4 +31,10 @@ As instruções detalhadas de setup do backend (Julião API), que atualmente res
 
 ### Relatório de Execução
 
-(Esta seção deve ser deixada em branco)
+O arquivo `/README.md` principal foi reescrito em português brasileiro (pt-br), tornando-o mais conciso e focado na descrição geral do projeto e na persona "Julião".
+As seções detalhadas sobre a configuração de desenvolvimento do backend (Julião API), estrutura do projeto backend e comandos Alembic foram removidas do `/README.md`.
+Um novo arquivo, `docs/CONFIGURACAO_DESENVOLVIMENTO.md`, foi criado.
+Todo o conteúdo referente ao setup do backend foi movido do `/README.md` para `docs/CONFIGURACAO_DESENVOLVIMENTO.md`.
+O conteúdo em `docs/CONFIGURACAO_DESENVOLVIMENTO.md` foi traduzido para português brasileiro (pt-br) e formatado para clareza.
+Todos os critérios de aceitação foram atendidos.
+```
