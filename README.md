@@ -10,114 +10,31 @@ Julião é um aplicativo de gestão financeira pessoal projetado para ajudar os 
 
 Inspirado no icônico personagem Julius Rock da série "Todo Mundo Odeia o Chris", o assistente de IA do aplicativo é:
 
-* **Extremamente Econômico:** Sabe o valor de cada centavo.
-* **Direto e Sem Rodeios:** Fala a verdade sobre seus gastos, doa a quem doer.
-* **Humorístico e Debochado:** Usa frases de efeito e ironia para tornar a gestão financeira menos intimidante e mais memorável.
-* **Educador "Linha Dura":** Ajuda a distinguir necessidades de desejos, incentivando a responsabilidade financeira.
-* **Foco no Essencial:** Sem funcionalidades complexas desnecessárias, apenas o que você precisa para não "torrar" seu dinheiro à toa.
+*   **Extremamente Econômico:** Sabe o valor de cada centavo.
+*   **Direto e Sem Rodeios:** Fala a verdade sobre seus gastos, doa a quem doer.
+*   **Humorístico e Debochado:** Usa frases de efeito e ironia para tornar a gestão financeira menos intimidante e mais memorável.
+*   **Educador "Linha Dura":** Ajuda a distinguir necessidades de desejos, incentivando a responsabilidade financeira.
+*   **Foco no Essencial:** Sem funcionalidades complexas desnecessárias, apenas o que você precisa para não "gastar demais" seu dinheiro à toa.
 
 ## Funcionalidades Principais do MVP
 
-* **Interação via WhatsApp com a IA Julião:**
-    * Registro de despesas (avulsas e parceladas) e receitas usando linguagem natural.
-    * Gestão de múltiplas contas bancárias/carteiras.
-    * Gestão de múltiplos cartões de crédito (acompanhamento de faturas, registro de pagamentos).
-    * Registro e acompanhamento de compras parceladas.
-    * Criação e gerenciamento de transações recorrentes (contas a pagar e recebimentos).
-    * Transferências entre contas.
-    * Consultas de saldo, extrato de faturas, próximas parcelas/recorrências.
-    * Lembretes de vencimentos de faturas e contas recorrentes.
-    * Respostas e dicas com a personalidade única do Julião.
-* **Dashboard Web Moderno:**
-    * Configuração inicial de contas, cartões de crédito e transações recorrentes.
-    * Visão geral consolidada dos saldos, próximas faturas e resumos mensais.
-    * Listagem detalhada de todas as transações com filtros avançados.
-    * Seção dedicada para gerenciamento de cartões de crédito (faturas, parcelamentos).
-    * Seção dedicada para gerenciamento de transações recorrentes.
-    * Relatórios visuais simples (ex: despesas por categoria, evolução de saldo).
+*   **Interação via WhatsApp com a IA Julião:**
+    *   Registro de despesas (avulsas e parceladas) e receitas usando linguagem natural.
+    *   Gestão de múltiplas contas bancárias/carteiras.
+    *   Gestão de múltiplos cartões de crédito (acompanhamento de faturas, registro de pagamentos).
+    *   Registro e acompanhamento de compras parceladas.
+    *   Criação e gerenciamento de transações recorrentes (contas a pagar e recebimentos).
+    *   Transferências entre contas.
+    *   Consultas de saldo, extrato de faturas, próximas parcelas/recorrências.
+    *   Lembretes de vencimentos de faturas e contas recorrentes.
+    *   Respostas e dicas com a personalidade única do Julião.
+*   **Dashboard Web Moderno:**
+    *   Configuração inicial de contas, cartões de crédito e transações recorrentes.
+    *   Visão geral consolidada dos saldos, próximas faturas e resumos mensais.
+    *   Listagem detalhada de todas as transações com filtros avançados.
+    *   Seção dedicada para gerenciamento de cartões de crédito (faturas, parcelamentos).
+    *   Seção dedicada para gerenciamento de transações recorrentes.
+    *   Relatórios visuais simples (ex: despesas por categoria, evolução de saldo).
 
-## Backend API (Julião API)
-
-The backend for the Julião application is built using FastAPI and is located in the `juliao_api/` directory. It's designed to be run with Docker for both development and production.
-
-### Development Setup
-
-1.  **Navigate to the API directory:**
-    ```bash
-    cd juliao_api
-    ```
-2.  **Create your development environment file:**
-    Copy the example environment file `.env.example` to `.env.dev` and fill in any necessary local configurations.
-    ```bash
-    cp .env.example .env.dev
-    ```
-    For the basic setup, the defaults in `.env.example` for `DATABASE_URL_LOCAL` should work with the provided `docker-compose.yml`.
-
-3.  **Build and run the services using Docker Compose:**
-    ```bash
-    docker-compose up --build -d
-    ```
-    The `-d` flag runs the containers in detached mode.
-
-4.  **Accessing the API:**
-    Once the containers are running, the API will be accessible at `http://localhost:8001`.
-    You can check the health of the API by navigating to `http://localhost:8001/health`.
-
-### Project Structure
-
-The `juliao_api/` directory follows a standard structure for FastAPI applications:
-
--   `app/`: Contains the core application logic, including:
-    -   `main.py`: The entry point for the FastAPI application.
-    -   `core/`: Configuration, settings.
-    -   `apis/`: API versioning and endpoint definitions.
-    -   `models/`: Pydantic models for request/response validation.
-    -   `schemas/`: (Alternative or complementary to `models/` for Pydantic schemas, if needed).
-    -   `services/`: Business logic.
-    -   `db/`: Database session management and configuration.
-    -   `crud/`: Functions for Create, Read, Update, Delete operations.
--   `tests/`: Unit and integration tests.
--   `Dockerfile`: For building the production Docker image.
--   `docker-compose.yml`: For local development orchestration.
--   `pyproject.toml` & `poetry.lock`: Dependency management with Poetry.
--   `.env.example`: Example environment variables.
--   `alembic.ini`: Alembic configuration for database migrations.
-
-### Database Migrations (Alembic)
-
-Database schema changes are managed using Alembic. The migration scripts are located in the `juliao_api/alembic/versions/` directory. Ensure your Docker development database container is running before executing Alembic commands.
-
-**Key Alembic commands (run from within the `juliao_api/` directory):**
-
-*   **Ensure the database container is running:**
-    ```bash
-    docker-compose up -d db
-    ```
-    (If you're running the full API service with `docker-compose up -d`, the `db` service will already be up.)
-
-*   **Apply all pending migrations:**
-    This command will upgrade your database schema to the latest version.
-    ```bash
-    poetry run alembic upgrade head
-    ```
-
-*   **Generate a new migration script:**
-    After making changes to your SQLModel definitions in `juliao_api/app/models/`, you'll need to generate a new migration script.
-    ```bash
-    poetry run alembic revision -m "your_descriptive_migration_message"
-    ```
-    Inspect the generated script in `juliao_api/alembic/versions/` and populate the `upgrade()` and `downgrade()` functions as needed.
-
-*   **Check current database revision:**
-    ```bash
-    poetry run alembic current
-    ```
-
-*   **Show migration history:**
-    ```bash
-    poetry run alembic history
-    ```
-
-**Important:**
-- Alembic uses the `DATABASE_URL_LOCAL` from your `.env.dev` file (within `juliao_api/`) to connect to the database. Ensure this is correctly configured.
-- The initial database schema based on the defined SQLModels has been created and versioned.
+---
+*(Para instruções de configuração do ambiente de desenvolvimento do backend, consulte o documento `docs/CONFIGURACAO_DESENVOLVIMENTO.md`)*
